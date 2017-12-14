@@ -17,6 +17,7 @@ namespace ShowCompileMessageXML
                 newchild.Text = node.Name;//给树节点赋值
                 treeNodes.Add(newchild);//加入树节点
                                         //  allxmlNodeinTree.Add(node);//将xml节点存入数组
+                                        //test
                 XmlAttributeCollection x = node.Attributes;//获取当前节点下的所有属性
                 int flag = 0;//定义标志
                 if (x != null)//若属性集非空
