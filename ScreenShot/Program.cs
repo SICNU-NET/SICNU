@@ -16,7 +16,7 @@ namespace ScreenShot
 
             string current = Directory.GetCurrentDirectory();
 
-            string selectResultPath =current+"\\"+ ConfigurationManager.AppSettings["selectResultPath"];
+            string selectResultPath = current + "\\" + ConfigurationManager.AppSettings["selectResultPath"];
             string screenshotPath = current + "\\ScreenShot";
             if (File.Exists(selectResultPath))
             {
@@ -35,7 +35,7 @@ namespace ScreenShot
                         String[] Name = line.Split('-');
                         String fileName = Name[0].Replace("Sample", "");
                         String Directory = selectResultPath.Replace("\\", "/");
-                        String workingDirectory = Directory.Replace("selectResult.txt", "") + "Project/" + line + "/" + fileName + "/bin/Debug";
+                        String workingDirectory = Directory.Replace("selectResult.txt", "") + "Project/" + line + "/" + fileName + "/bin/Debug/";
                         Start start = new Start();
                         DirectoryInfo directoryInfo = new DirectoryInfo(workingDirectory);
                         StringBuilder stringBuilder = new StringBuilder();

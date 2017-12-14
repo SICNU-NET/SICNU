@@ -8,16 +8,10 @@ namespace ScreenShot
     {
         public Boolean start(String fileName, String workingDirectory, String screenshotPath)
         {
-            ProcessStartInfo Info = new ProcessStartInfo
-            {
-                FileName = fileName + ".exe", //"Map Suite Desktop for WinForms App1.exe",
-                WorkingDirectory = workingDirectory, //"E:/Thinkgeo/MapSuite9SamplesUpgrade/Tools/tool/DisplayWmsRasterLayerSample-ForWinForms/DisplayWmsRasterLayer/bin/Debug/"
-                UseShellExecute = false
-            };
-            Process Proc;
+            Process Proc = new Process();
             try
             {
-                Proc = Process.Start(Info);
+                Proc = Process.Start(workingDirectory + fileName);
             }
             catch (System.ComponentModel.Win32Exception e)
             {
@@ -28,7 +22,7 @@ namespace ScreenShot
             //打印出外部程序的开始执行时间
             Console.WriteLine(fileName + "截图开始执行时间：{0}", Proc.StartTime);
 
-            //等待3秒钟
+            //等待10秒钟
             Proc.WaitForExit(10000);
             ScreenShot s = new ScreenShot();
             Image img = s.CaptureWindow(Proc.MainWindowHandle);
