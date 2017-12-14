@@ -18,6 +18,7 @@ namespace DownLoadProject
             string filePath = string.Format(currentPath + "\\" + downSouceTxt);
             string baseUrl = "https://github.com/ThinkGeo";
             //Because only a command is needed.So run a CMD command directly.  git clone url
+            //test
             string cmd = "for /f %i in (" + filePath + ") do git clone " + baseUrl + "/" + "%i";
             if (!File.Exists(filePath))
             {
